@@ -63,13 +63,13 @@ if(isset($_GET['delete'])){
    ?>
             <div class="box">
                 <p> id do usuário : <span><?= $fetch_pedidos['id_usuario']; ?></span> </p>
-                <p> realizado em : <span><?= $fetch_pedidos['data_pedido']; ?></span> </p>
+                <p> realizado em : <span><?= date('d/m/Y', strtotime($fetch_pedidos['data_pedido'])); ?></span> </p>
                 <p> nome : <span><?= $fetch_pedidos['nome']; ?></span> </p>
                 <p> e-mail : <span><?= $fetch_pedidos['email']; ?></span> </p>
                 <p> telefone : <span><?= $fetch_pedidos['telefone']; ?></span> </p>
                 <p> endereço : <span><?= $fetch_pedidos['endereco']; ?></span> </p>
-                <p> total de produtos : <span><?= $fetch_pedidos['qtd_produtos']; ?></span> </p>
-                <p> valor total : <span>R$<?= $fetch_pedidos['valor_total']; ?></span> </p>
+                <p> total de produtos : <span><?= str_replace('.',',',$fetch_pedidos['qtd_produtos']); ?></span> </p>
+                <p> valor total : <span>R$ <?= str_replace('.',',',$fetch_pedidos['valor_total']); ?></span> </p>
                 <p> metodo de pagamentpo : <span><?= $fetch_pedidos['metodo']; ?></span> </p>
                 <form action="" method="POST">
                     <input type="hidden" name="id_pedido" value="<?= $fetch_pedidos['id']; ?>">

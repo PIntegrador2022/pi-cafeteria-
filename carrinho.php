@@ -83,11 +83,11 @@ $valor_total = 0;
          <img src="uploaded_img/<?= $fetch_carrinho['imagem']; ?>" alt="">
          <div class="name"><?= $fetch_carrinho['nome']; ?></div>
          <div class="flex">
-            <div class="preco"><span>R$</span><?= $fetch_carrinho['preco']; ?></div>
+            <div class="preco"><span>R$</span><?= str_replace('.',',',$fetch_carrinho['preco']); ?></div>
             <input type="number" name="quantidade" class="quantidade" min="1" max="99" value="<?= $fetch_carrinho['quantidade']; ?>" maxlength="2">
             <button type="submit" class="fas fa-edit" name="atualiza_quantidade"></button>
          </div>
-         <div class="sub-total"> sub total : <span>R$<?= $sub_total = ($fetch_carrinho['preco'] * $fetch_carrinho['quantidade']); ?>/-</span> </div>
+         <div class="sub-total"> sub total : <span>R$<?= str_replace('.',',',$sub_total = ($fetch_carrinho['preco'] * $fetch_carrinho['quantidade'])); ?></span> </div>
       </form>
       <?php
                $valor_total += $sub_total;
@@ -100,7 +100,7 @@ $valor_total = 0;
    </div>
 
    <div class="total_carrinho">
-      <p>total do carrinho : <span>R$<?= $valor_total; ?></span></p>
+      <p>total do carrinho : <span>R$<?= str_replace('.',',',$valor_total); ?></span></p>
       <a href="checkout.php" class="btn <?= ($valor_total > 1)?'':'disabled'; ?>">ir para o checkout</a>
    </div>
 

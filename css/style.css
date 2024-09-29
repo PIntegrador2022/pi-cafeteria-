@@ -45,6 +45,7 @@ body {
    background-color: var(--cinza);
 }
 
+
 html{
    font-size: 62.5%;
    overflow-x: hidden;
@@ -984,6 +985,12 @@ section{
 
 .footer .grid .box a:hover{
    text-decoration: underline;
+}
+
+.footer .grid .box-map{
+margin: auto;
+padding: auto;
+width: 100%;
 }
 
 .credit{

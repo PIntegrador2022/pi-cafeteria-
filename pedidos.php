@@ -51,14 +51,14 @@ if(isset($_SESSION['id_usuario'])){
             while($fetch_pedidos = $select_pedidos->fetch(PDO::FETCH_ASSOC)){
    ?>
    <div class="box">
-      <p>pedido realizado em : <span><?= $fetch_pedidos['data_pedido']; ?></span></p>
+      <p>pedido realizado em : <span><?= date('d/m/Y', strtotime($fetch_pedidos['data_pedido'])); ?></span></p>
       <p>nome : <span><?= $fetch_pedidos['nome']; ?></span></p>
       <p>email : <span><?= $fetch_pedidos['email']; ?></span></p>
       <p>telefone : <span><?= $fetch_pedidos['telefone']; ?></span></p>
       <p>endereço : <span><?= $fetch_pedidos['endereco']; ?></span></p>
       <p>metodo de pagamento : <span><?= $fetch_pedidos['metodo']; ?></span></p>
-      <p>seus pedidos : <span><?= $fetch_pedidos['qtd_produtos']; ?></span></p>
-      <p>valor total : <span>R$<?= number_format($fetch_pedidos['valor_total'],2,',',' '); ?>/-</span></p>
+      <p>seus pedidos : <span><?= str_replace('.',',',$fetch_pedidos['qtd_produtos']); ?></span></p>
+      <p>valor total : <span>R$<?= str_replace('.',',',number_format($fetch_pedidos['valor_total'],2,',',' ')); ?></span></p>
       <p>status de pagamentos : <span style="color:<?php if($fetch_pedidos['status_pagamento'] == 'pendente'){ echo 'red'; }else{ echo 'green'; }; ?>"><?= $fetch_pedidos['status_pagamento']; ?></span> </p>
    </div>
    <?php

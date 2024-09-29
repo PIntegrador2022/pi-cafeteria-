@@ -98,7 +98,7 @@ if(isset($_POST['submit'])){
                $valor_total += ($fetch_carrinho['preco'] * $fetch_carrinho['quantidade']);
       ?>
                 <p><span class="nome"><?= $fetch_carrinho['nome']; ?></span><span
-                        class="preco">R$<?= $fetch_carrinho['preco']; ?> x <?= $fetch_carrinho['quantidade']; ?></span>
+                        class="preco">R$<?= str_replace('.',',',$fetch_carrinho['preco']); ?> x <?= $fetch_carrinho['quantidade']; ?></span>
                 </p>
                 <?php
             }
@@ -107,7 +107,7 @@ if(isset($_POST['submit'])){
          }
       ?>
                 <p class="valor-total"><span class="nome">valor total :</span><span
-                        class="preco">R$<?= $valor_total; ?></span></p>
+                        class="preco">R$<?= str_replace('.',',',$valor_total); ?></span></p>
                 <a href="carrinho.php" class="btn">ver carrinho</a>
             </div>
 

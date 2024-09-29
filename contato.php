@@ -75,7 +75,7 @@ if(isset($_POST['send'])){
          <input type="text" name="nome" maxlength="50" class="box" placeholder="Digite seu nome" required>
          <input type="number" name="telefone" min="0" max="9999999999" class="box" placeholder="Digite seu telefone" required maxlength="10">
          <input type="email" name="email" maxlength="50" class="box" placeholder="Digite o e-mail" required>
-         <textarea name="mensagem" class="box" required placeholder="digite sua mensagem" maxlength="500" cols="30" rows="10"></textarea>
+         <textarea name="mensagem" class="box" required placeholder="Digite sua mensagem" maxlength="500" cols="30" rows="10"></textarea>
          <input type="submit" value="enviar mensagem" name="send" class="btn">
       </form>
 
